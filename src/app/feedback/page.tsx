@@ -206,7 +206,7 @@ export default function FeedbackSubmission() {
           {/* Main Feedback Form */}
           <Card className="shadow-2xl border-2 transition-all duration-300">
             <CardContent className="p-6">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 {/* Feedback Text Area */}
                 <div className="space-y-2">
                   <Label
@@ -240,7 +240,7 @@ export default function FeedbackSubmission() {
 
                   <RadioGroup.Root
                     defaultValue="general"
-                    className="w-full grid grid-cols-2 gap-6"
+                    className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6"
                     value={category}
                     onValueChange={(newValue) =>
                       setValue(
@@ -275,7 +275,7 @@ export default function FeedbackSubmission() {
                 <div className="flex flex-col space-y-4">
                   <Button
                     type="submit"
-                    className="w-full py-6 text-lg font-semibold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full py-6 md:text-lg font-semibold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -297,8 +297,8 @@ export default function FeedbackSubmission() {
                   </p>
                 </div>
               </form>
-              <div className="flex flex-col gap-2 items-center justify-center mt-4">
-                <div className="mt-2 flex flex-col gap-4 mb-2">
+              <div className="flex flex-col gap-2 items-center justify-center mt-1">
+                <div className="flex flex-col gap-4 mb-0.5">
                   {aiFeedbacks?.map((feedback, index) => {
                     console.log(feedback, "\n\n");
                     return (
@@ -347,7 +347,7 @@ export default function FeedbackSubmission() {
 
             <p className="text-sm text-muted-foreground">
               Powered by{" "}
-              <span className="font-semibold text-primary">FeedbackHub</span> •
+              <span className="font-semibold text-primary">Voxdrop</span> •
               <span className="ml-2">Making feedback safe and anonymous</span>
             </p>
           </div>

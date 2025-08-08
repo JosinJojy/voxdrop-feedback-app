@@ -12,7 +12,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="dark:bg-neutral-950 bg-gray-100">
+    <div className="dark:bg-neutral-950 bg-gray-100 scroll-smooth">
       <Navbar />
       {children}
     </div>
