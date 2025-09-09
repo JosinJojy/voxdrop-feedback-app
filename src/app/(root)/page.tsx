@@ -7,13 +7,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Shield,
-  Zap,
-  Users,
-  ArrowRight
-} from "lucide-react";
+import { Shield, Zap, Users, ArrowRight } from "lucide-react";
 import Footer from "@/components/custom/Footer";
+import AnimateText from "@/components/custom/animations/AnimateText";
+import DivFadeIn from "@/components/custom/animations/DivFadeIn";
 export default function Home() {
   return (
     <div>
@@ -24,15 +21,19 @@ export default function Home() {
             <Badge variant="outline" className="mb-4">
               ✨ Anonymous & Secure
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            {/* I changed something here */}
+            <AnimateText
+              className="text-4xl lg:text-6xl font-bold tracking-tight mb-6"
+              isHeading={true}
+            >
               Collect honest feedback
               <span className="text-primary"> anonymously</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            </AnimateText>
+            <AnimateText className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Create your feedback link in seconds and start receiving genuine,
               anonymous feedback from your team, customers, or community.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            </AnimateText>
+            <DivFadeIn className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" asChild className="text-lg px-8">
                 <Link href="/dashboard">
                   Get Started Free
@@ -47,7 +48,7 @@ export default function Home() {
               >
                 <Link href="#howItWorks">View Demo</Link>
               </Button>
-            </div>
+            </DivFadeIn>
           </div>
         </div>
       </section>
@@ -56,17 +57,20 @@ export default function Home() {
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <AnimateText
+              className="text-3xl lg:text-4xl font-bold mb-4"
+              isHeading={true}
+            >
               Why choose FeedbackHub?
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            </AnimateText>
+            <AnimateText className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Simple, secure, and effective feedback collection that respects
               privacy
-            </p>
+            </AnimateText>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-2 hover:border-primary/50 transition-colors">
+          <DivFadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-2 hover:border-primary/50 transition duration-200">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-primary" />
@@ -79,7 +83,7 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-2 hover:border-primary/50 transition-colors">
+            <Card className="border-2 hover:border-primary/50 transition duration-200">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-primary" />
@@ -92,7 +96,7 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-2 hover:border-primary/50 transition-colors">
+            <Card className="border-2 hover:border-primary/50 transition duration-200">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
@@ -103,7 +107,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-          </div>
+          </DivFadeIn>
         </div>
       </section>
 
@@ -111,15 +115,18 @@ export default function Home() {
       <section id="howItWorks" className="py-20 lg:py-32 bg-secondary/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <AnimateText
+              className="text-3xl lg:text-4xl font-bold mb-4"
+              isHeading={true}
+            >
               How it works
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            </AnimateText>
+            <AnimateText className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Three simple steps to start collecting valuable feedback
-            </p>
+            </AnimateText>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <DivFadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-primary-foreground">
@@ -155,31 +162,36 @@ export default function Home() {
                 View all feedback in your dashboard and make improvements
               </p>
             </div>
-          </div>
+          </DivFadeIn>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32 dark:bg-neutral-900 bg-neutral-100 dark:text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+          <AnimateText
+            className="text-3xl lg:text-4xl font-bold mb-6"
+            isHeading={true}
+          >
             Ready to start collecting feedback
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          </AnimateText>
+          <AnimateText className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join thousands of teams who trust FeedbackHub for their feedback
             collection needs
-          </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            asChild
-            className="text-lg px-8"
-          >
-            <Link href="/dashboard">
-              Get Started Free
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          </AnimateText>
+          <DivFadeIn>
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
+              className="text-lg px-8"
+            >
+              <Link href="/dashboard">
+                Get Started Free
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </DivFadeIn>
         </div>
       </section>
 

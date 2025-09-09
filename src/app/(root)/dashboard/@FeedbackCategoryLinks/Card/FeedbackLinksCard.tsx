@@ -34,6 +34,7 @@ import { ApiResponse } from "@/types/ApiResponse";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { formatDate } from "@/helpers/feedback-card-helpers";
+import AnimatedCard from "@/components/custom/animations/AnimatedCard";
 
 const FeedbackLinksCard = ({
   feedbackCategoryDetails,
@@ -67,7 +68,7 @@ const FeedbackLinksCard = ({
   };
 
   return (
-    <>
+    <AnimatedCard >
       <Card className="group hover:shadow-lg hover:border-primary  transition-all duration-300">
         <CardHeader>
           <div className="flex flex-col sm:flex-row gap-2 justify-between items-start">
@@ -191,7 +192,7 @@ const FeedbackLinksCard = ({
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </>
+    </AnimatedCard>
   );
 };
 

@@ -20,6 +20,8 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { GithubIcon } from "lucide-react";
 import GoogleIcon from "@/components/ui/GoogleIcon";
+import AnimateText from "@/components/custom/animations/AnimateText";
+import DivFadeIn from "@/components/custom/animations/DivFadeIn";
 
 const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,56 +70,67 @@ const SignIn = () => {
     <div className="p-4 md:p-0 flex justify-center items-center min-h-screen bg-radial-[at_50%_75%] from-primary/10 via-background to-primary/5 to-95%">
       <div className="w-full max-w-md p-8 space-y-8 rounded-lg dark:bg-neutral-900 bg-white border shadow-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
+          <AnimateText
+            className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6"
+            isHeading={true}
+          >
             Ready To Get Feedback
-          </h1>
-          <p className="mb-4 text-neutral-300">
+          </AnimateText>
+          <AnimateText className="mb-4 text-neutral-300">
             Sign in to know what others say
-          </p>
+          </AnimateText>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="identifier"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Identifier</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      placeholder="username or email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="password"
-                      placeholder="tinysecrete"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full cursor-pointer"
-            >
-              {isSubmitting ? "Loading...." : "Sign In"}
-            </Button>
+            <DivFadeIn initial={5}>
+              <FormField
+                control={form.control}
+                name="identifier"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Identifier</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        placeholder="username or email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </DivFadeIn>
+
+            <DivFadeIn initial={5}>
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Password</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder="tinysecrete"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </DivFadeIn>
+
+            <DivFadeIn initial={2}>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full cursor-pointer"
+              >
+                {isSubmitting ? "Loading...." : "Sign In"}
+              </Button>
+            </DivFadeIn>
             <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
               <span className="bg-card text-muted-foreground relative z-10 px-2 rounded-sm">
                 Or continue with
@@ -125,11 +138,11 @@ const SignIn = () => {
             </div>
           </form>
         </Form>
-        <div className="grid grid-cols-2 gap-2 w-full">
+        <DivFadeIn className="grid grid-cols-2 gap-2 w-full" initial={5}>
           <Button
             onClick={() => signIn("github")}
             variant={"outline"}
-            className="cursor-pointer"
+            className="cursor-pointer active:border-primary"
           >
             <GithubIcon />
             Github
@@ -137,15 +150,18 @@ const SignIn = () => {
           <Button
             onClick={() => signIn("google")}
             variant={"outline"}
-            className="cursor-pointer"
+            className="cursor-pointer border focus:!border-primary"
           >
             <GoogleIcon />
             Google
           </Button>
-        </div>
+        </DivFadeIn>
         <div className="text-center mt-2">
           <p className="text-xs text-neutral-400">
-            Dont have an account? <Link href="/signup" className="text-neutral-300 underline">Sign Up</Link>
+            Dont have an account?{" "}
+            <Link href="/signup" className="text-neutral-300 underline">
+              Sign Up
+            </Link>
           </p>
         </div>
       </div>

@@ -17,6 +17,7 @@ import { FeedbackCardProps } from "@/types/FeedbackCardProps";
 import { useDeleteFeedback } from "@/hooks/useFeedbackActions";
 import PopupFeedbackView from "@/components/custom/popups/PopupFeedbackView";
 import PopupDeleteFeedbackConfirmation from "@/components/custom/popups/PopupDeleteFeedbackConfirmation";
+import AnimatedCard from "@/components/custom/animations/AnimatedCard";
 
 const FeedbackCard = ({ feedback, filters }: FeedbackCardProps) => {
 
@@ -50,7 +51,7 @@ const FeedbackCard = ({ feedback, filters }: FeedbackCardProps) => {
   };
 
   return (
-    <>
+    <AnimatedCard>
       <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-l-4 order-l-white/50 dark:border-l-white/20 hover:border-l-primary dark:hover:border-l-primary">
         <CardHeader>
           <div className="flex justify-between items-start">
@@ -130,7 +131,7 @@ const FeedbackCard = ({ feedback, filters }: FeedbackCardProps) => {
           onDeleteFeedback={onDeleteFeedback}
         />
       </AlertDialog>
-    </>
+    </AnimatedCard>
   );
 };
 
