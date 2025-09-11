@@ -211,7 +211,7 @@ export default function FeedbackSubmission() {
           </div>
 
           {/* Main Feedback Form */}
-          <DivFadeIn viewport={0.5}>
+          <DivFadeIn viewport={0.1}>
             <Card className="shadow-2xl border-2 transition-all duration-300">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
