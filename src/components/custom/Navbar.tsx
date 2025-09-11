@@ -6,7 +6,7 @@ import { User } from "next-auth";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { User as UsesrIcon, TentTree } from "lucide-react";
+import { User as UsesrIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "../ui/separator";
+import Image from "next/image";
 
 export default function Navbar() {
   const { data: session } = useSession();
@@ -45,8 +46,8 @@ export default function Navbar() {
         <div className="flex h-16 justify-between items-center">
           {/* Left section */}
           <div className="flex items-center justify-center gap-2">
-            <TentTree className="text-primary" />
-            <h1 className="text-3xl font-bold">VOXDROP</h1>
+            <Image width={50} height={50} alt="" src="voxdrop-logo.svg" />
+            <h1 className="hidden sm:block text-3xl font-bold">VOXDROP</h1>
           </div>
 
           {/* Right section */}

@@ -92,6 +92,16 @@ export const authOptions: NextAuthOptions = {
             email: profile.email,
             isVerified: true,
           });
+
+          // Add sample category for new user
+          // const newFeedbackCategory = {
+          //   title: "Ask me Anything",
+          //   createdAt: new Date(),
+          //   isAcceptingThisCategory: true,
+          //   userId: newUser?._id,
+          //   count: 0,
+          // };
+          // console.log("\n\n\n\\\\n",newFeedbackCategory)
           exsistingUser = newUser;
         }
 
