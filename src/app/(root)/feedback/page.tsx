@@ -32,7 +32,6 @@ import { FeedbackType } from "@/helpers/feedback-card-helpers";
 import AnimateText from "@/components/custom/animations/AnimateText";
 import DivFadeIn from "@/components/custom/animations/DivFadeIn";
 import Link from "next/link";
-import Navbar from "@/components/custom/Navbar";
 
 export default function FeedbackSubmission() {
   const [userId, setUserId] = useState("");
