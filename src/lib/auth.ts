@@ -4,7 +4,7 @@ import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcryptjs";
 import dbConnect from "@/lib/dbConnect";
-import UserModel from "@/models/UserModel";
+import UserModel, { FeedbackCategory } from "@/models/UserModel";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -93,15 +93,18 @@ export const authOptions: NextAuthOptions = {
             isVerified: true,
           });
 
-          // Add sample category for new user
-          // const newFeedbackCategory = {
-          //   title: "Ask me Anything",
-          //   createdAt: new Date(),
-          //   isAcceptingThisCategory: true,
-          //   userId: newUser?._id,
-          //   count: 0,
-          // };
-          // console.log("\n\n\n\\\\n",newFeedbackCategory)
+          //Add sample category for new user
+          const newFeedbackCategory = {
+            title: "Ask me Anything",
+            createdAt: new Date(),
+            isAcceptingThisCategory: true,
+            userId: newUser?._id,
+            count: 0,
+          };
+          console.log("\n\n\n\\\\n",newFeedbackCategory)
+
+          newUser.FeedbackCategories?.push(newFeedbackCategory as FeedbackCategory)
+          await newUser.save();
           exsistingUser = newUser;
         }
 
