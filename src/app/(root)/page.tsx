@@ -40,14 +40,14 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 asChild
                 className="text-lg px-8"
               >
                 <Link href="#howItWorks">View Demo</Link>
-              </Button>
+              </Button> */}
             </DivFadeIn>
           </div>
         </div>
