@@ -31,6 +31,8 @@ import SubmitSuccessMessage from "@/components/custom/SubmitSuccessMessage";
 import { FeedbackType } from "@/helpers/feedback-card-helpers";
 import AnimateText from "@/components/custom/animations/AnimateText";
 import DivFadeIn from "@/components/custom/animations/DivFadeIn";
+import Link from "next/link";
+import Navbar from "@/components/custom/Navbar";
 
 export default function FeedbackSubmission() {
   const [userId, setUserId] = useState("");
@@ -174,9 +176,9 @@ export default function FeedbackSubmission() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto mt-16">
           {/* Header Section */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <div className="relative mb-8">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl w-20 h-20 mx-auto animate-pulse" />
             </div>
@@ -192,7 +194,7 @@ export default function FeedbackSubmission() {
             </DivFadeIn>
 
             <AnimateText
-              className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text dark:text-white text-primary"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text dark:text-white text-primary"
               isHeading={true}
             >
               {feedbackDetails?.title ? (
@@ -203,7 +205,7 @@ export default function FeedbackSubmission() {
                 </div>
               )}
             </AnimateText>
-            <AnimateText className="text-md text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <AnimateText className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               `Share your honest thoughts about &quot;{feedbackDetails?.title}
               &quot;. Your feedback is completely anonymous and helps us improve
               our collaboration and productivity`
@@ -356,7 +358,9 @@ export default function FeedbackSubmission() {
 
             <p className="text-sm text-muted-foreground">
               Powered by{" "}
-              <span className="font-semibold text-primary">Voxdrop</span> •
+              <Link href="/">
+                <span className="font-semibold text-primary">Voxdrop</span> •
+              </Link>
               <span className="ml-2">Making feedback safe and anonymous</span>
             </p>
           </div>

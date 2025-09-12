@@ -29,7 +29,7 @@ export default function Home() {
               Collect honest feedback
               <span className="text-primary"> anonymously</span>
             </AnimateText>
-            <AnimateText className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <AnimateText className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Create your feedback link in seconds and start receiving genuine,
               anonymous feedback from your team, customers, or community.
             </AnimateText>

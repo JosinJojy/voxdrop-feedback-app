@@ -13,7 +13,7 @@ export default async function RootLayout({
 }>) {
   return (
     <div className="dark:bg-neutral-950 bg-gray-100 scroll-smooth">
-      <Navbar />
+      <Navbar/>
       {children}
     </div>
   );

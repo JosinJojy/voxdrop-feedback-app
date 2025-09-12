@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { User } from "next-auth";
@@ -37,6 +38,17 @@ export default function Navbar() {
   }, []);
 
   const { setTheme } = useTheme();
+
+  const pathname = usePathname();
+  const [isFeedbacks, setIsFeedbacks] = useState(false);
+
+  useEffect(() => {
+    if (pathname?.startsWith("/feedback")) {
+      setIsFeedbacks(true);
+    } else {
+      setIsFeedbacks(false);
+    }
+  }, [pathname]);
 
   return (
     <nav
@@ -105,7 +117,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <Separator />
+      {!isFeedbacks && <Separator />}
+      
     </nav>
   );
 }
